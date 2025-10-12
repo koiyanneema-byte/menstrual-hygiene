@@ -1,0 +1,44 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block title %} - hygiene{% endblock %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h1 style="display: inline-block; background-color: purple; color: white; padding: 0.25em 0.5em;">
+      This is the contact page</h1>
+  </div>
+{% endblock content%}
+{% block contactactive %} active {% endblock contactactive %}
+{% block body %}
+<div class="container mt-4">
+  {% for message in messages %}  
+  <div class="alert alert-{{ message.tags}} alert-dismissible fade show" role="alert">
+  <strong>Message : </strong> {{ message}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+
+  <form action="/contact/" method="post">
+
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone No.</label>
+    <input type="phone" class="form-control" name="phone" id="phone" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="content" class="form-label">Message</label>
+    <textarea class="form-control" name="content" id="content" cols="30" rows="6"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock body %}

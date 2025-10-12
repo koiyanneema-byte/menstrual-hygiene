@@ -1,0 +1,31 @@
+{% extends "../home/base.html" %}
+{% load static %}
+{% block blogactive %} active {% endblock %}
+{% block title %}Search Results - {{ query }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <a href="{% url 'blog' %}" class="btn btn-primary mb-3">← Back to Blog</a>
+    <h1>Search Results for "{{ query }}"</h1>
+
+    {% if allPosts %}
+        <div class="row g-4">
+            {% for post in allPosts %}
+                <div class="col-md-4">
+                    <div class="card text-white h-100" style="background-color: purple;">
+                        <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-subtitle mb-2">Blog by - {{ post.author }}</h5>
+                            <h6 class="card-title"><u>{{ post.title }}</u></h6>
+                            <p class="card-text">{{ post.content|truncatechars:30 }}</p>
+                            <a href="{% url 'blogpost' slug=post.slug %}" class="btn btn-light">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No results found for "{{ query }}".</p>
+    {% endif %}
+</div>
+{% endblock %}

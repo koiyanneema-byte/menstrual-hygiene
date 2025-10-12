@@ -1,0 +1,53 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block title %} - hygiene{% endblock %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h1 style="display: inline-block; background-color: purple; color: white; padding: 0.25em 0.5em;">
+      <u>POST A BLOG HERE </u>
+    </h1>
+  </div>
+{% endblock content %}
+
+{% block blogactive %} active {% endblock blogactive %}
+
+{% block body %}
+<div class="container mt-4">
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message:</strong> {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+    <form action="/blog/addblog" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="title" class="form-label">Blog Title</label>
+      <input type="text" class="form-control" name="title" id="title" required>
+    </div>
+    <div class="mb-3">
+      <label for="author" class="form-label">Author</label>
+      <input type="text" class="form-control" name="author" id="author" required>
+    </div>
+    <div class="mb-3">
+      <label for="slug" class="form-label">Slug</label>
+      <input type="text" class="form-control" name="slug" id="slug" required>
+    </div>
+    <div class="mb-3">
+      <label for="content" class="form-label">Content</label>
+      <textarea class="form-control" name="content" id="content" rows="6" required></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="timestamp" class="form-label">Timestamp</label>
+      <input type="datetime-local" class="form-control" name="timestamp" id="timestamp" required>
+    </div>
+    <div class="mb-3">
+      <label for="image" class="form-label">Upload Image</label>
+      <input type="file" class="form-control" name="image" id="image" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Blog</button>
+  </form>
+</div>
+{% endblock body %}

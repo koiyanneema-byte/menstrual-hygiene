@@ -1,0 +1,137 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block title %} - hygiene{% endblock %}
+{% block aboutactive %} active {% endblock %}
+
+{% block content %}
+
+
+
+<div class="container mt-4">
+  <!-- About Me Header -->
+  <section class="about-header text-center mb-5">
+    <h1 style="color: #FF69B4; font-size: 2.5rem; margin-bottom: 1rem;">About Me</h1>
+    <p style="font-size: 1.2rem; color: #20B2AA; font-weight: bold;">
+      Hi! I'm Neema Koiyan, and I'm 11 years old.
+    </p>
+  </section>
+  <!-- About Me Content -->
+  <section class="about-content row align-items-center mb-5">
+    <div class="col-md-6">
+      <img src="{% static 'images/siz.jpg' %}" class="d-block w-100" alt="firstImage" style="max-height: 500px; object-fit: cover;">
+    </div>
+    <div class="col-md-6">
+      <h2 style="color: #20B2AA; font-size: 1.8rem; margin-bottom: 1.5rem;">My Story</h2>
+      <p style="font-size: 1.1rem; line-height: 1.6; color: #333;">
+        I'm in <strong>Grade 6 at Kiuni Preparatory School</strong> in Kitengela, Kenya. I love coding, drawing, and dreaming up ways to mix <strong>fashion with technology and AI</strong>. But what really matters to me is making sure every girl can go to school with dignity—especially during her period.
+      </p>
+      <p style="font-size: 1.1rem; line-height: 1.6; color: #333;">
+        I started advocating for <strong>menstrual hygiene</strong> because I saw my classmates miss school when they didn’t have pads or safe places to change. In places like the Maasai, Kisii, and Western Kenya, many girls face the same problem. I want to change that by spreading awareness, kindness, and practical solutions.
+      </p>
+    </div>
+  </section>
+
+  <!-- My Dreams -->
+  <section class="about-dreams mb-5" style="background-color: #FFF0F5; padding: 2rem; border-radius: 10px;">
+    <h2 style="color: #20B2AA; font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center;">My Dreams</h2>
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <div style="color: #FF69B4; font-size: 2rem; margin-bottom: 1rem;">👗</div>
+        <h3 style="color: #20B2AA;">Fashion Designer</h3>
+        <p>I want to design clothes that make people feel confident and happy.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <div style="color: #FF69B4; font-size: 2rem; margin-bottom: 1rem;">💻</div>
+        <h3 style="color: #20B2AA;">Tech & AI</h3>
+        <p>I love coding and dream of using AI to solve real-world problems.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <div style="color: #FF69B4; font-size: 2rem; margin-bottom: 1rem;">🩺</div>
+        <h3 style="color: #20B2AA;">Menstrual Hygiene Advocate</h3>
+        <p>Every girl deserves to learn without fear or shame. I want to help make that happen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Realities -->
+<section class="community-realities mb-5" style="background-color: #E6F7FF; padding: 2rem; border-radius: 10px;">
+  <h2 style="color: #FF69B4; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Community Realities</h2>
+  <p style="text-align: center; font-size: 1rem; color: #333;">
+Menstrual hygiene challenges are different across Kenya, but one thing is the same—many girls are still suffering in silence. In some communities, cultural beliefs, poverty, and lack of facilities make it hard for girls to manage their periods with dignity. This section shows the real stories behind the statistics, reminding us why change is urgent and why every girl deserves safety, support, and pads.
+</p>
+
+  <div class="row">
+    <!-- Maasai -->
+    <div class="col-md-4 mb-4">
+      
+      <div class="card h-100" style="border: 2px solid #FF69B4; border-radius: 10px;">
+          <div class="card-body text-center">
+          <img src="{% static 'images/maasai.jpeg' %}" class="card-img-top" alt="firstImage">
+          <h3 class="card-title" style="color: #20B2AA;">Maasai</h3>
+          <p class="card-text">
+            In Maasai communities, cultural taboos and limited facilities make it hard for girls to manage their periods. Many miss school because they don’t have pads or private places to change.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Western Kenya -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100" style="border: 2px solid #FF69B4; border-radius: 10px;">
+        <div class="card-body text-center">
+          <img src="{% static 'images/luhya.jpeg' %}" class="card-img-top" alt="firstImage">
+          <h3 class="card-title" style="color: #20B2AA;">Western Kenya</h3>
+          <p class="card-text">
+            Many schools in Western Kenya lack proper WASH (Water, Sanitation, and Hygiene) facilities. Without clean toilets or running water, girls struggle to stay in school during their periods.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kisii -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100" style="border: 2px solid #FF69B4; border-radius: 10px;">
+        <div class="card-body text-center">
+          <img src="{% static 'images/kisii2.jpeg' %}" class="card-img-top" alt="firstImage">
+          <h3 class="card-title" style="color: #20B2AA;">Kisii</h3>
+          <p class="card-text">
+            In Kisii, poverty and poor infrastructure force many girls to use unsafe alternatives like rags or leaves. This puts their health at risk and keeps them from focusing on their education.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- kalenjin -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100" style="border: 2px solid #FF69B4; border-radius: 10px;">
+        <div class="card-body text-center">
+          <img src="{% static 'images/kalenjin2.jpeg' %}" class="card-img-top" alt="firstImage">
+          <h3 class="card-title" style="color: #20B2AA;">Kalenjin</h3>
+          <p class="card-text">
+            In Kalenjin, poverty and poor infrastructure force many girls to use unsafe alternatives like rags or leaves. This puts their health at risk and keeps them from focusing on their education.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Motivation -->
+  <div class="text-center mt-4">
+    <p style="font-size: 1.1rem; color: #333; font-style: italic;">
+      These challenges motivate me to advocate for <strong>dignity, education, and access</strong> for every girl. Together, we can break the silence and create change!
+    </p>
+  </div>
+</section>
+
+
+  <!-- Call to Action -->
+  <section class="about-cta text-center mb-4">
+    <p style="font-size: 1.2rem; color: #333; margin-bottom: 1.5rem;">
+      Want to join me? Let's work together for a world where every girl has what she needs to thrive!
+    </p>
+    {% comment %} <a href="{% url 'join_club' %}" class="btn" style="background-color: #FF69B4; color: white; padding: 0.8rem 2rem; font-weight: bold; text-decoration: none; border-radius: 5px;"> {% endcomment %}
+      Join My Club
+    </a>
+  </section>
+</div>
+{% endblock content%}

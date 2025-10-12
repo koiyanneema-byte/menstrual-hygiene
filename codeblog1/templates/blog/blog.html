@@ -1,0 +1,32 @@
+{% extends "../home/base.html" %}
+{% load static %}
+
+{% block title %} - hygiene{% endblock %}
+{% block blogactive %} active {% endblock %}
+{% block content %}
+  <div class="container mt-4">
+  <h1 style="display: inline-block; background-color: purple; color: white; padding: 0.25em 0.5em;">
+    THESE ARE THE AVAILABLE BLOGS ON THE PAGE.
+  </h1>
+  </div>
+{% endblock %}
+{% block body %}
+
+<div class="container mt-4">
+  <div class="row g-4">
+    {% for post in allPosts %}
+    <div class="col-md-4">
+      <div class="card text-white h-100" style="background-color: purple;">
+        <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}" style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-subtitle mb-2">Blog by - {{ post.author }}</h5>
+          <h6 class="card-title"><u>{{ post.title }}</u></h6>
+          <p class="card-text">{{ post.content|truncatechars:40 }}</p>
+          <a href="{{ post.slug }}" class="btn btn-light">Read More</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,20 @@
+{% extends "../home/base.html" %}
+{% load static %}
+
+{% block title %} - hygiene{% endblock %}
+{% block blogactive %} active {% endblock %}
+
+{% block body %}
+<div>
+  <a href="{% url 'blog' %}" class="btn btn-primary mb-3">← Back to Blog</a>
+  <article class="blog-post">
+  <h2 class="blog-post-title mb-1">{{ post.title }}</h2>
+  <p class="blog-post-meta">{{ post.timestamp }} by <a href="#">{{ post.author }}</a></p>
+  <p><strong>BLOG BODY</strong></p>
+  <hr>
+  <p>{{ post.content }}</p>
+</article>
+
+</div>
+
+{% endblock body %}
