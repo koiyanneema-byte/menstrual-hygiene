@@ -19,6 +19,13 @@ Built to empower Neema’s advocacy mission, My Voice for Hygiene blends technol
 ## Requirements
 
 Your `requirements.txt` should include:
+asgiref==3.10.0
+Django==5.2.7
+gunicorn==23.0.0
+packaging==25.0
+pillow==11.3.0
+sqlparse==0.5.3
+tzdata==2025.2
 
 
 ---
