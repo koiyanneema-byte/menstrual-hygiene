@@ -16,7 +16,7 @@ Built to empower Neema’s advocacy mission, My Voice for Hygiene blends technol
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 Your `requirements.txt` should include:
 
@@ -36,10 +36,14 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 
 pip install -r requirements.txt
 
-#Apply database migrations
+---
+
+## Apply database migrations
 python manage.py makemigrations
 python manage.py migrate
 
-#finnally launch it via cmd
+---
+
+## finnally launch it via cmd
 python manage.py runserver
 
